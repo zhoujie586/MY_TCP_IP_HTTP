@@ -1,0 +1,2 @@
+D:\File\VSduc\Learning-DIY-TCPIP_WEB\xnet_tiny_c0000\x64\Debug\xnet.exe
+D:\File\VSduc\MY-TCPIIP_WEB\xnet_tiny_c0000\x64\Debug\xnet.exe
