@@ -32,5 +32,55 @@
 #ifndef XNET_TINY_H
 #define XNET_TINY_H
 
+#include <stdint.h>
+
+#define XNET_CFG_PACKET_MAX_SIZE		1516		// 收发数据包的最大大小
+
+#define XNET_MAC_ADDR_SIZE				6			// MAC地址长度
+
+#pragma pack(1)
+ /**
+  * 以太网数据帧格式的帧头：RFC894
+  */
+typedef struct _xether_hdr_t 
+{
+	uint8_t dest[XNET_MAC_ADDR_SIZE];
+	uint8_t src[XNET_MAC_ADDR_SIZE];
+	uint16_t protocal;
+}xether_hdr_t;
+#pragma pack()
+
+typedef enum _xnet_err_t 
+{
+	XNET_ERR_OK = 0,
+	XNET_ERR_IO = -1,
+}xnet_err_t;
+
+typedef enum _xnet_protocal_t
+{
+	XNET_PROTOCAL_ARP = 0x0806,		// ARP协议
+	XNET_PROTOCAL_IP = 0x0800,		// IP协议
+}xnet_protocal_t;
+
+/**
+ * 网络数据结构
+ */
+typedef struct _xnet_packet_t
+{
+	uint16_t size;								// 数据包中有效数据大小
+	uint8_t* data;								// 数据包的起始地址
+	uint8_t payload[XNET_CFG_PACKET_MAX_SIZE];	// 最大负载数据量
+}xnet_packet_t;
+
+xnet_err_t xnet_driver_open(uint8_t* mac_addr);
+xnet_err_t xnet_driver_send(xnet_packet_t* packet);
+xnet_err_t xnet_driver_read(xnet_packet_t** packet);
+
+xnet_packet_t* xnet_alloc_for_send(uint16_t data_size);
+xnet_packet_t* xnet_alloc_for_read(uint16_t data_size);
+
+void xnet_init(void);
+void xnet_poll(void);
+
 #endif // XNET_TINY_H
 

@@ -1,5 +1,7 @@
-﻿  pcap_device.c
-  xserver_datetime.c
+﻿  app.c
+  port_pcap.c
   xnet_tiny.c
+D:\File\VSduc\MY-TCPIIP_WEB\xnet_tiny_c0000\src\xnet_tiny\xnet_tiny.c(127,8): warning C4013: “memcpy”未定义；假设外部返回 int
+D:\File\VSduc\MY-TCPIIP_WEB\xnet_tiny_c0000\src\xnet_tiny\xnet_tiny.c(149,26): warning C4133: “=”: 从“uint8_t *”到“xether_hdr_t *”的类型不兼容
   正在生成代码...
   xnet.vcxproj -> D:\File\VSduc\MY-TCPIIP_WEB\xnet_tiny_c0000\x64\Debug\xnet.exe
