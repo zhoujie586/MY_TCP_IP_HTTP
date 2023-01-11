@@ -5,6 +5,11 @@
       "ProjectGuid": "fb7baa19-2f78-4a2d-8f6f-6f298f04a3c4",
       "DisplayName": "xnet",
       "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "杂项文件",
+      "ColorIndex": -1
     }
   },
   "NextColorIndex": 1

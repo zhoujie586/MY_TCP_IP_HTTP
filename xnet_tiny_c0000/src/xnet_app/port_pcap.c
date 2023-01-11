@@ -29,6 +29,7 @@
  * ..... 更多功能开发中...........
  * 如果你有兴趣的话，欢迎关注。
  */
+#include <time.h>
 #include <string.h>
 #include <stdlib.h>
 #include "pcap_device.h"
@@ -85,4 +86,9 @@ xnet_err_t xnet_driver_read(xnet_packet_t** packet)
 	}
 
 	return XNET_ERR_IO;
+}
+
+const xnet_time_t xsys_get_time(void)
+{
+	return clock() / CLOCKS_PER_SEC;
 }
